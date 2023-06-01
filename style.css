@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: linear-gradient(#300230, #22021c) ;
+    height: 100hv;
+    font-family: 'Courier New', Courier, monospace;
+}
+section{
+    background-image:url(stars1.png) ;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ul{
+    text-align: center;
+    list-style: none;
+}
+ul:hover li a{
+    opacity: 0;
+} 
+ul li{
+    margin: 1em;
+}
+ul li a{
+    color: aliceblue;
+    text-decoration: none;
+    font-size: 25px;
+    letter-spacing: 2px;
+    background-color: darkblue;
+    padding: 6px 15px;
+    border-radius: 20px;
+    display: inline-block;
+    transition: 0.7s ease;
+    width: 120px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 999;
+}
+ul li a:hover{
+    transform: scale(1.1);
+    background-color: #5c0b4d;
+    opacity: 1;
+}
+ul li::after{
+    content: attr(data-text);
+    color: beige;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    font-size: 80px;
+    position: absolute;
+    font-weight: 900;
+    opacity: 0;
+    text-transform: uppercase;
+    pointer-events: none;
+    letter-spacing: 50px;
+    transition: 0.5s;
+}
+ul li:hover:after{
+    opacity: 0.5;
+    letter-spacing: 5px;
+}
+ul li::before{
+    content: "";
+    height: 80px;
+    width: 180px;
+    background: antiquewhite;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , 70%);
+    border-radius: 50%;
+    position: absolute;
+    opacity: 0;
+    box-shadow: 0 0 80px orangered;
+    transform: translate(0.5s);
+}
+ul li:hover:before{
+    opacity: 1;
+    width: 80px;
+}
